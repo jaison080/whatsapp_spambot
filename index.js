@@ -39,7 +39,10 @@ const start = async (url) => {
     "🤡🤡🤡",
   ];
 
-  for (let i = 0; i < 10; i++) {
+  //Setup here the no: of times the message should be sent...
+  let count = 10;
+
+  for (let i = 0; i < count; i++) {
     let message = messages[Math.floor(Math.random() * messages.length)];
     await input.type(message);
     await page.keyboard.press("Enter");

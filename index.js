@@ -1,8 +1,6 @@
 const puppeteer = require("puppeteer");
 let url = "https://web.whatsapp.com/";
 
-let target = "Jagannath E Shahi"; //Contact Name
-
 const start = async (url) => {
   const browser = await puppeteer.launch({
     headless: false,
@@ -20,7 +18,8 @@ const start = async (url) => {
     })
   );
 
-  await page.type("._13NKt", target);
+  await page.type("._13NKt", "Roshan Koshy"); //Contact Name
+
   await page.keyboard.press("Enter");
 
   let input = await page.$(
@@ -35,12 +34,14 @@ const start = async (url) => {
     "💚💚💚",
     "🐱‍🚀🐱‍🚀🐱‍🚀",
     "👾👾👾",
+    "From Jagannath",
     "🤖🤖🤖",
+    "Contact Jagannath for more details...",
     "🤡🤡🤡",
   ];
 
   //Setup here the no: of times the message should be sent...
-  let count = 10;
+  let count = 2000;
 
   for (let i = 0; i < count; i++) {
     let message = messages[Math.floor(Math.random() * messages.length)];
